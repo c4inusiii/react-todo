@@ -1,38 +1,81 @@
-.App {
-  text-align: center;
+.container {
+  padding: 0 275px;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header {
+  margin: 75px 0 60px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header__inner {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  gap: 0 20px;
+}
+
+.input {
+  width: 100%;
+  border: 1px solid #3e1671;
+  border-radius: 10px;
+  font-size: 16px;
+  color: #fff;
+  padding: 10px 15px;
+}
+
+.input::placeholder {
+  color: #777;
+}
+
+.add {
+  width: 40px;
+  height: 40px;
+  background-color: #9E78CF;
+  border-radius: 10px;
+  position: relative;
+}
+
+.add::before {
+  position: absolute;
+  content: "+";
+  color: #fff;
+  font-size: 35px;
+  line-height: 30px;
+  top: 6px;
+  right: 7px;
+  font-family: serif;
+}
+
+.tasks__info {
+  color: #fff;
+  font-size: 16px;
+}
+
+.task {
+  width: 100%;
+  padding: 28px 20px;
+  margin-top: 16px;
+  background-color: #15101C;
+  border-radius: 10px;
+  color: #9E78CF;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+}
+
+.task__user-actions {
+  display: flex;
+  align-items: center;
+  gap: 0 8px;
+}
+
+.done,
+.delete {
+  width: 30px;
+  height: 30px;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  align-items: center;
 }
