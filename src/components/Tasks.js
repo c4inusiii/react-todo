@@ -1,17 +1,19 @@
-import React from "react";
 import Task from "./Task";
 
-function Tasks() {
-  const [tasksCount, setTasksCount] = React.useState(4);
-  const [showTask, setShowTask] = React.useState(true);
-
+function Tasks({tasks, onDeleteTask, onCompleteTask}) {
   return (
     <div className="tasks">
-      <p className="tasks__info">Tasks to do - {tasksCount}</p>
-      <Task taskTitle={"To study React fundamentals"} showTask={showTask} />
-      <Task taskTitle={"To study React fundamentals"} showTask={showTask} />
-      <Task taskTitle={"To study React fundamentals"} showTask={showTask} />
-      <Task taskTitle={"To study React fundamentals"} showTask={showTask} />
+      <p className="tasks__info">Tasks to do - {tasks.length}</p>
+      <div className="tasks_list">
+        {tasks.map((task) => (
+          <Task
+            key={task.id}
+            task={task}
+            onDelete={() => onDeleteTask(task.id)}
+            onComplete={() => onCompleteTask(task.id)}
+          />
+        ))}
+      </div>
     </div>
   );
 }

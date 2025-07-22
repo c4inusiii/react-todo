@@ -1,3 +1,9 @@
+:root {
+  --main-purple: #9E78CF;
+  --dark-purple: #3e1671;
+  --accent-green: #78CFB0;
+}
+
 .container {
   padding: 0 275px;
   max-width: 1200px;
@@ -17,7 +23,7 @@
 
 .input {
   width: 100%;
-  border: 1px solid #3e1671;
+  border: 1px solid var(--dark-purple);
   border-radius: 10px;
   font-size: 16px;
   color: #fff;
@@ -29,25 +35,17 @@
 }
 
 .add {
-  width: 40px;
-  height: 40px;
-  background-color: #9E78CF;
+  min-width: 40px;
+  min-height: 40px;
+  background-color: var(--main-purple);
   border-radius: 10px;
-  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.add::before {
-  position: absolute;
-  content: "+";
-  color: #fff;
-  font-size: 35px;
-  line-height: 30px;
-  top: 6px;
-  right: 7px;
-  font-family: serif;
-}
-
-.tasks__info {
+.tasks__info,
+.done__info {
   color: #fff;
   font-size: 16px;
 }
@@ -58,7 +56,7 @@
   margin-top: 16px;
   background-color: #15101C;
   border-radius: 10px;
-  color: #9E78CF;
+  color: var(--main-purple);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -71,11 +69,34 @@
   gap: 0 8px;
 }
 
-.done,
-.delete {
+.done-button,
+.delete-button {
   width: 30px;
   height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.done-button,
+.delete-button {
+  svg path {
+    transition: fill 0.2s;
+  }
+}
+
+.done-button:hover,
+.delete-button:hover {
+  svg path {
+    fill: var(--dark-purple);
+  }
+}
+
+.done {
+  margin-top: 60px;
+}
+
+.done__task-title {
+  color: var(--accent-green);
+  text-decoration: line-through;
 }
